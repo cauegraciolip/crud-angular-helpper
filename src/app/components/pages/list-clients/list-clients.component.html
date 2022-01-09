@@ -1,0 +1,20 @@
+<div class="list-container">
+    <ul *ngFor="let client of _clients">
+        <mat-card class="card-list">
+            <li><span>Nome:</span> {{ client.name }}</li>
+            <li><span>E-mail:</span> {{ client.email }}</li>
+            <li><span>Telefone:</span> {{ client.phone }}</li>
+            <li><span>Status:</span> {{ client.status }}</li>
+            <div>
+                <a 
+                    (click)="saveTempInfo(client.id, client.name, client.email, client.phone, client.status)"
+                    (click)="navigateToEditForm()" 
+                     id="{{ client.id }}"><i class="material-icons edit">edit</i></a>
+                <a (click)="deleteThisItem(client.id)"><i class="material-icons delete">delete</i></a>
+            </div>
+        </mat-card>
+    </ul>
+</div>
+
+<!-- (click)="navigateToEditForm()"  -->
+
