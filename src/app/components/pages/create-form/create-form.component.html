@@ -1,0 +1,41 @@
+<mat-card class="card-create-client">
+    <mat-card-title class="card-title" color="primary">Crie um cliente</mat-card-title>
+    <form #clientForm="ngForm" class="form-group">
+    
+    
+        <mat-form-field appearance="outline" class="form">
+            <mat-label>Nome</mat-label>
+            <input name="name" matInput placeholder="Nome" ngModel required>
+            <mat-icon matSuffix><i class="material-icons">person</i></mat-icon>
+            <mat-hint>José Maria da Silva</mat-hint>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="form">
+            <mat-label>E-mail</mat-label>
+            <input name="email" email matInput placeholder="E-mail" ngModel required>
+            <mat-icon matSuffix><i class="material-icons">email</i></mat-icon>
+            <mat-hint>josemaria@exemplo.com.br</mat-hint>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" color="primary" class="form">
+            <mat-label>Telefone</mat-label>
+            <input name="phone" phone type="tel" matInput placeholder="99999-9999" ngModel required>
+            <mat-icon matSuffix><i class="material-icons">phone</i></mat-icon>
+        </mat-form-field>
+    
+    </form>
+    
+    <div class="button-group">
+        <button mat-raised-button 
+                color="primary"
+                (click)="navigateToHome()" 
+                (click)="saveThisClient(clientForm)" 
+                [disabled]="clientForm.invalid || clientForm.pristine"
+                (click)="showSnackBar()">Criar cliente</button>
+        <button mat-raised-button color="warn" (click)="navigateToHome()" type="submit">Cancelar</button>
+    </div>
+</mat-card>
+
+
+
+

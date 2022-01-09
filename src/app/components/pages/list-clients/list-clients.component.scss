@@ -1,0 +1,43 @@
+.list-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-list {
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+
+  li {
+    list-style-type: none;
+    padding-bottom: 10px;
+
+    span {
+      font-weight: 500;
+      color: rgb(19, 19, 19);
+      padding-right: 5px;
+    }
+  }
+
+  div {
+    text-align: right;
+    a {
+      padding-right: 10px;
+    }
+
+    a:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.delete:hover {
+  color: #eb5757;
+  transition: color 0.3s ease;
+}
+
+.edit:hover {
+  color: #2f80ed;
+  transition: color 0.3s ease;
+}

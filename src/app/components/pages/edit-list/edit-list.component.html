@@ -1,0 +1,50 @@
+<mat-card class="card-create-client">
+    <mat-card-title class="card-title" color="primary">Edite um cliente</mat-card-title>
+    <form #clientForm="ngForm" class="form-group">
+    
+        
+        <mat-form-field appearance="outline" class="form">
+            <mat-label>ID</mat-label>
+            <input name="id" matInput value="{{ _client.id }}" readonly [(ngModel)]="_client.id">
+            <mat-icon matSuffix><i class="material-icons">pin</i></mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form">
+            <mat-label>Nome</mat-label>
+            <input name="name" matInput placeholder="Nome" value="{{ _client.name }}" [(ngModel)]="_client.name"/>
+            <mat-icon matSuffix><i class="material-icons">person</i></mat-icon>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" class="form">
+            <mat-label>E-mail</mat-label>
+            <input name="email" email matInput placeholder="E-mail" value="{{ _client.email }}" [(ngModel)]="_client.email"/>
+            <mat-icon matSuffix><i class="material-icons">email</i></mat-icon>
+        </mat-form-field>
+    
+        <mat-form-field appearance="outline" color="primary" class="form">
+            <mat-label>Telefone</mat-label>
+            <input name="phone" phone type="tel" matInput placeholder="99999-9999" value="{{ _client.phone }}" [(ngModel)]="_client.phone" />
+            <mat-icon matSuffix><i class="material-icons">phone</i></mat-icon>
+        </mat-form-field>
+
+       
+        <mat-radio-group class="radio-group" [(ngModel)]="status" [ngModelOptions]="{standalone: true}">
+            <mat-radio-button class="radio-button" *ngFor="let myStatus of _myStatus" [value]="myStatus">{{myStatus}}</mat-radio-button>
+        </mat-radio-group>
+        
+          
+    
+    </form>
+    
+    <div class="button-group">
+        <button mat-raised-button 
+                color="primary"
+                (click)="testEdit(clientForm)"
+                (click)="showSnackBar()"
+                type="submit">Editar cliente</button>
+        <button mat-raised-button color="warn" (click)="navigateToHome()">Cancelar</button>
+    </div>
+</mat-card>
+
+<!-- (click)="navigateToHome()" -->
+<!-- (click)="editThisClient(clientForm)" -->

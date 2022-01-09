@@ -1,0 +1,47 @@
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.form {
+  margin: 5px;
+  margin-bottom: 0;
+}
+
+.button-group {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  button {
+    margin-right: 10px;
+  }
+}
+
+.radio-buttons {
+  max-width: 200px;
+  margin: 5px auto;
+  margin-bottom: 10px;
+
+  mat-radio-button {
+    margin-right: 20px;
+  }
+}
+
+.card-create-client {
+  width: 700px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.card-title {
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 10px;
+  color: #3b4244;
+}
